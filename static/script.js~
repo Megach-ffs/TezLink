@@ -1,0 +1,350 @@
+// Data for translations
+const translations = {
+  uz: {
+    "nav.home": "Bosh sahifa",
+    "nav.about": "Haqida",
+    "nav.products": "Mahsulotlar",
+    "nav.services": "Xizmatlar",
+    "nav.portfolio": "Portfolio",
+    "nav.faq": "FAQ",
+    "nav.testimonials": "Fikrlar",
+    "nav.contact": "Aloqa",
+    "cta.get": "TezLink'ni oling",
+    "hero.eyebrow": "O'zbekistonda yangi",
+    "hero.title": "Bir tegish. Cheksiz aloqalar.",
+    "hero.subtitle": "TezLink O'zbekistondagi mutaxassislarga bir tegish orqali kontakt ma'lumotlari, portfoliosi va ijtimoiy tarmoqlarini darhol ulash imkonini beradi.",
+    "cta.request": "Aloqa ma'lumotlarini so'rash",
+    "cta.how": "Qanday ishlaydi",
+    "hero.local": "Mahalliy to'lovlar qabul qilinadi: Click, PayMe, Uzum. O'zbekiston bo'ylab yetkazib berish.",
+    "products.title": "Kartalar va narxlar",
+    "products.plastic_title": "Plastik karta",
+    "products.plastic_desc": "Bardoshli, arzon, kundalik foydalanish uchun mukammal. Brend logotipi kiritilgan.",
+    "products.metal_title": "Metall karta",
+    "products.metal_desc": "Matli yuzali lazer bilan o'yilgan po'lat. Elegent, premium his.",
+    "products.eco_title": "Eko yog'och karta",
+    "products.eco_desc": "Silliq, tabiiy yuzali barqaror materiallardan yasalgan.",
+    "how.title": "TezLink qanday ishlaydi",
+    "how.step1": "Profilingizni yarating",
+    "how.step1_desc": "Havolalar, ijtimoiy tarmoqlar va kontakt ma'lumotlarini boshqarish va ulash mumkin bo'lgan shaxsiy sahifa.",
+    "how.step2": "Kartangizni oling",
+    "how.step2_desc": "Biz O'zbekistonning istalgan nuqtasiga buyurtma qilingan kartangizni yetkazib beramiz.",
+    "how.step3": "Teging va ulaning",
+    "how.step3_desc": "Raqamli profilingizni bir zumda ulash uchun TezLink kartangizni smartfonga teging.",
+    "testimonials.title": "Mijozlarimiz fikrlari",
+    "testimonials.test1": "\"TezLink mening tarmoq ishimni ancha osonlashtirdi. Karta ajoyib ko'rinadi va profilni sozlash juda oson. Tavsiya qilaman!\"",
+    "testimonials.test1_author": "— M. Azimov, Bosh direktor",
+    "testimonials.test2": "\"Metall kartaning sifati ajoyib. Bu suhbatni boshlash uchun ajoyib vosita va biznes uchun samarali vosita.\"",
+    "testimonials.test2_author": "— S. Valiullaev, Marketing",
+    "testimonials.test3": "\"Tez yetkazib berish va ajoyib mijozlarga xizmat ko'rsatish. Mahalliy to'lov imkoniyatlari butun jarayonni qulay qildi.\"",
+    "testimonials.test3_author": "— Z. Karimova, Frilanser",
+    "cta.strip_title": "Ulanishga tayyormisiz?",
+    "cta.strip_desc": "Bugun o'zingizning TezLink kartangizni oling.",
+    "cta.strip_products": "Mahsulotlarni ko'rish",
+    "cta.strip_contact": "O'zingiznikini oling",
+    "contact.title": "Aloqaga chiqing",
+    "contact.desc": "Savollaringiz bormi yoki buyurtma bermoqchimisiz? Quyidagi shaklni to'ldiring va biz sizga tez orada javob beramiz.",
+    "contact.name": "Ism",
+    "contact.email": "Email",
+    "contact.interest": "Men qiziqaman...",
+    "contact.interest_placeholder": "Men qiziqaman...",
+    "contact.general_inquiry": "Umumiy so'rov",
+    "contact.message": "Sizning xabaringiz",
+    "contact.submit": "Xabar yuborish",
+    "footer.copyright": "© 2024 TezLink. Barcha huquqlar himoyalangan.",
+    "footer.telegram": "Telegram",
+    "footer.instagram": "Instagram"
+  },
+  ru: {
+    "nav.home": "Главная",
+    "nav.about": "О&nbsp;нас",
+    "nav.products": "Продукты",
+    "nav.services": "Услуги",
+    "nav.portfolio": "Портфолио",
+    "nav.faq": "FAQ",
+    "nav.testimonials": "Отзывы",
+    "nav.contact": "Контакты",
+    "cta.get": "Получить TezLink",
+    "hero.eyebrow": "Новинка в Узбекистане",
+    "hero.title": "Одно касание. Бесконечные связи.",
+    "hero.subtitle": "TezLink позволяет специалистам в Узбекистане мгновенно делиться своими контактами, портфолио и социальными сетями — одним касанием.",
+    "cta.request": "Запросить контакты",
+    "cta.how": "Как это работает",
+    "hero.local": "Принимаем местные платежи: Click, PayMe, Uzum. Доставка по всему Узбекистану.",
+    "products.title": "Карты и цены",
+    "products.plastic_title": "Пластиковая карта",
+    "products.plastic_desc": "Прочная, доступная, идеальная для ежедневного использования. Ваш логотип бренда включен.",
+    "products.metal_title": "Металлическая карта",
+    "products.metal_desc": "Сталь с лазерной гравировкой и матовым покрытием. Гладкий, премиальный вид.",
+    "products.eco_title": "Эко-деревянная карта",
+    "products.eco_desc": "Изготовлена из экологически чистых материалов с гладкой, естественной отделкой.",
+    "how.title": "Как работает TezLink",
+    "how.step1": "Создайте свой профиль",
+    "how.step1_desc": "Личная страница, где вы можете управлять и делиться своими ссылками, социальными сетями и контактными данными.",
+    "how.step2": "Получите свою карту",
+    "how.step2_desc": "Мы производим и доставляем вашу индивидуально разработанную карту до вашей двери в любую точку Узбекистана.",
+    "how.step3": "Касайтесь и подключайтесь",
+    "how.step3_desc": "Просто приложите свою карту TezLink к смартфону, чтобы мгновенно поделиться своим цифровым профилем.",
+    "testimonials.title": "Что говорят наши клиенты",
+    "testimonials.test1": "\"TezLink значительно упростил мой нетворкинг. Карта выглядит великолепно, а профиль настраивается очень легко. Очень рекомендую!\"",
+    "testimonials.test1_author": "— М. Азимов, генеральный директор",
+    "testimonials.test2": "\"Качество металлической карты фантастическое. Это отличный способ начать разговор и эффективный инструмент для бизнеса.\"",
+    "testimonials.test2_author": "— С. Валиуллаев, Маркетинг",
+    "testimonials.test3": "\"Быстрая доставка и потрясающая поддержка клиентов. Местные способы оплаты сделали весь процесс легким.\"",
+    "testimonials.test3_author": "— З. Каримова, Фрилансер",
+    "cta.strip_title": "Готовы подключиться?",
+    "cta.strip_desc": "Получите свою индивидуальную карту TezLink сегодня.",
+    "cta.strip_products": "Посмотреть продукты",
+    "cta.strip_contact": "Получить свою",
+    "contact.title": "Связаться с нами",
+    "contact.desc": "У вас есть вопросы или вы хотите сделать заказ? Заполните форму ниже, и мы свяжемся с вами в ближайшее время.",
+    "contact.name": "Имя",
+    "contact.email": "Email",
+    "contact.interest": "Я заинтересован в...",
+    "contact.interest_placeholder": "Я заинтересован в...",
+    "contact.general_inquiry": "Общий вопрос",
+    "contact.message": "Ваше сообщение",
+    "contact.submit": "Отправить сообщение",
+    "footer.copyright": "© 2024 TezLink. Все права защищены.",
+    "footer.telegram": "Telegram",
+    "footer.instagram": "Instagram"
+  },
+  en: {
+    "nav.home": "Home",
+    "nav.about": "About",
+    "nav.products": "Products",
+    "nav.services": "Services",
+    "nav.portfolio": "Portfolio",
+    "nav.faq": "FAQ",
+    "nav.testimonials": "Testimonials",
+    "nav.contact": "Contact",
+    "cta.get": "Get TezLink",
+    "hero.eyebrow": "New in Uzbekistan",
+    "hero.title": "One Tap. Infinite Connections.",
+    "hero.subtitle": "TezLink empowers professionals in Uzbekistan to share their contact details, portfolios and socials instantly — with a single tap.",
+    "cta.request": "Request Contact",
+    "cta.how": "How it works",
+    "hero.local": "Accepts local payments: Click, PayMe, Uzum. Local delivery in Uzbekistan.",
+    "products.title": "Cards & Pricing",
+    "products.plastic_title": "Plastic Card",
+    "products.plastic_desc": "Durable, affordable, perfect for daily use. Your brand logo included.",
+    "products.metal_title": "Metal Card",
+    "products.metal_desc": "Laser-engraved steel with a matte finish. Sleek, premium feel.",
+    "products.eco_title": "Eco Wood Card",
+    "products.eco_desc": "Made from sustainable materials with a smooth, natural finish.",
+    "how.title": "How TezLink Works",
+    "how.step1": "Create your profile",
+    "how.step1_desc": "A personal page where you can manage and share your links, socials, and contact details.",
+    "how.step2": "Receive your card",
+    "how.step2_desc": "We produce and deliver your custom-designed card to your doorstep anywhere in Uzbekistan.",
+    "how.step3": "Tap and connect",
+    "how.step3_desc": "Simply tap your TezLink card on a smartphone to instantly share your digital profile.",
+    "testimonials.title": "What our customers say",
+    "testimonials.test1": "\"TezLink made my networking so much easier. The card looks great and the profile is a breeze to set up. Highly recommend!\"",
+    "testimonials.test1_author": "— M. Azimov, CEO",
+    "testimonials.test2": "\"The quality of the metal card is fantastic. It’s a great conversation starter and an effective tool for business.\"",
+    "testimonials.test2_author": "— S. Valiullaev, Marketing",
+    "testimonials.test3": "\"Fast delivery and amazing customer support. The local payment options made the whole process seamless.\"",
+    "testimonials.test3_author": "— Z. Karimova, Freelancer",
+    "cta.strip_title": "Ready to connect?",
+    "cta.strip_desc": "Get your custom TezLink card today.",
+    "cta.strip_products": "View products",
+    "cta.strip_contact": "Get yours",
+    "contact.title": "Get in touch",
+    "contact.desc": "Have questions or want to place an order? Fill out the form below and we'll get back to you shortly.",
+    "contact.name": "Name",
+    "contact.email": "Email",
+    "contact.interest": "I am interested in...",
+    "contact.interest_placeholder": "I am interested in...",
+    "contact.general_inquiry": "General Inquiry",
+    "contact.message": "Your Message",
+    "contact.submit": "Send Message",
+    "footer.copyright": "© 2024 TezLink. All rights reserved.",
+    "footer.telegram": "Telegram",
+    "footer.instagram": "Instagram"
+  }
+};
+
+let currentLang = 'uz';
+
+// Function to update the text based on the selected language
+function updateContent(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      // Use innerHTML for keys that might contain special HTML characters like &nbsp;
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const key = element.getAttribute('data-i18n-placeholder');
+    if (translations[lang] && translations[lang][key]) {
+      element.placeholder = translations[lang][key];
+    }
+  });
+  
+  // Set the "I am interested in..." option to the correct translated text
+  const interestPlaceholder = document.querySelector('[data-i18n="contact.interest_placeholder"]');
+  if (interestPlaceholder && translations[lang] && translations[lang]['contact.interest_placeholder']) {
+    interestPlaceholder.textContent = translations[lang]['contact.interest_placeholder'];
+  }
+}
+
+// Language switch functionality
+document.querySelectorAll('.lang-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const newLang = button.dataset.lang;
+    if (newLang !== currentLang) {
+      document.querySelector('.lang-btn.active').classList.remove('active');
+      button.classList.add('active');
+      currentLang = newLang;
+      updateContent(currentLang);
+    }
+  });
+});
+
+// Initial content update
+updateContent(currentLang);
+
+// Smooth scroll to sections
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Navbar functionality for mobile hamburger menu
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('main-nav');
+const navLinks = document.querySelectorAll('.main-nav a');
+
+menuToggle.addEventListener('click', () => {
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+  menuToggle.setAttribute('aria-expanded', !expanded);
+  menuToggle.classList.toggle('active');
+  mainNav.classList.toggle('open');
+});
+
+// Close menu when a link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// Icon burst animation
+const burstEls = {
+        contact: document.getElementById('burstContact'),
+        link: document.getElementById('burstLink'),
+        portfolio: document.getElementById('burstPortfolio'),
+        social: document.getElementById('burstSocial')
+      };
+      const iconBurst = document.getElementById('iconBurst');
+
+      function showBurst() {
+        // show each with a stagger
+        iconBurst.setAttribute('aria-hidden', 'false');
+        const order = ['contact','link','portfolio','social'];
+        order.forEach((k,i) => {
+          setTimeout(()=> burstEls[k].classList.add('show'), i*110);
+        });
+        // hide later
+        setTimeout(()=> {
+          order.forEach(k => burstEls[k].classList.remove('show'));
+          iconBurst.setAttribute('aria-hidden', 'true');
+        }, 2200);
+      }
+
+      // simulate a tap when clicking the phone or card area
+      document.querySelectorAll('.card-visual, .phone-visual').forEach(el=>{
+        el.addEventListener('click', (e)=>{
+          showBurst();
+        });
+      });
+
+      // Accessibility: keyboard simulation
+      document.getElementById('simulateTap').addEventListener('click', showBurst);
+
+// const iconBurst = document.getElementById('iconBurst');
+// const burstIcons = document.querySelectorAll('.burst-icon');
+// const simulateTap = document.getElementById('simulateTap');
+
+// function animateIcons() {
+//   burstIcons.forEach((icon, index) => {
+//     setTimeout(() => {
+//       icon.classList.add('show');
+//     }, index * 100);
+//   });
+//   setTimeout(() => {
+//     burstIcons.forEach(icon => icon.classList.remove('show'));
+//   }, 1500);
+// }
+
+// // Simulate the NFC tap on click of the invisible button
+// simulateTap.addEventListener('click', animateIcons);
+
+// Small UX improvement: drag-scrolling for horizontal lists (products & testimonials) for mobile
+function makeDragScrollable(selector) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+  let pos = { left: 0, x: 0, down: false };
+  el.addEventListener('pointerdown', (e) => {
+    pos = { down: true, x: e.clientX, left: el.scrollLeft };
+    el.style.cursor = 'grabbing';
+  });
+  window.addEventListener('pointerup', () => { pos.down = false; el.style.cursor = 'grab'; });
+  window.addEventListener('pointermove', (e) => {
+    if (!pos.down) return;
+    const dx = e.clientX - pos.x;
+    el.scrollLeft = pos.left - dx;
+  });
+}
+makeDragScrollable('.product-list');
+makeDragScrollable('.test-cards');
+
+// Contact Form - no mailto
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    // This prevents the default form submission which would reload the page
+    event.preventDefault(); 
+    
+    // You can add your own form submission logic here, such as sending data to a server
+    // For example:
+    // const formData = new FormData(this);
+    // fetch('your-server-endpoint', {
+    //   method: 'POST',
+    //   body: formData
+    // }).then(response => {
+    //   console.log('Form submitted successfully!');
+    //   // Optionally, clear the form or show a success message
+    // }).catch(error => {
+    //   console.error('Form submission failed:', error);
+    // });
+
+    // For now, we'll just log the form data to the console
+    const formData = new FormData(this);
+    const data = {};
+    for (let [key, value] of formData.entries()) {
+      data[key] = value;
+    }
+    console.log('Form data:', data);
+
+    // Optional: Reset the form after "submission"
+    this.reset();
+    
+    // Optional: Show a message to the user that the form was "sent"
+    const submitBtn = this.querySelector('button[type="submit"]');
+    submitBtn.textContent = 'Sent!';
+    setTimeout(() => {
+        submitBtn.textContent = translations[currentLang]['contact.submit'];
+    }, 2000);
+});
+
+// Keyboard focus to cta when coming back to top
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    document.getElementById('get-tezlink').focus();
+  }
+});

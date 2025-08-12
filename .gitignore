@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+database.db
+
+# Flask
+instance/
+
+# Vim
+*.swp
+*.swo
+*.swn
+*.un~
+*~
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/

@@ -1,0 +1,73 @@
+
+# app.py
+
+import sqlite3
+from flask import Flask, request, render_template, redirect, url_for
+
+# Initialize the Flask application
+app = Flask(__name__)
+
+# --- Database Setup and Utilities ---
+# This function creates a connection to the SQLite database.
+# It will create a new file named 'database.db' if it doesn't exist.
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    # Set the row_factory to sqlite3.Row to allow accessing columns by name
+    conn.row_factory = sqlite3.Row
+    return conn
+
+# This block is run once when the application starts to ensure the
+# contact_messages table exists, now with a new 'interest' column.
+with get_db_connection() as conn:
+    conn.execute('''
+        CREATE TABLE IF NOT EXISTS contact_messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT NOT NULL,
+            interest TEXT NOT NULL,
+            message TEXT NOT NULL
+        )
+    ''')
+    conn.commit()
+
+# --- Application Routes ---
+
+# This route handles both displaying the home page (GET request)
+# and processing the form submission (POST request).
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        # Get data from the submitted form, including the new 'interest' field.
+        name = request.form['name']
+        email = request.form['email']
+        interest = request.form['interest']
+        message = request.form['message']
+
+        # Open a database connection
+        try:
+            conn = get_db_connection()
+            # Insert the form data, now including 'interest', into the table.
+            conn.execute(
+                "INSERT INTO contact_messages (name, email, interest, message) VALUES (?, ?, ?, ?)",
+                (name, email, interest, message)
+            )
+            conn.commit()
+        except sqlite3.Error as e:
+            # Handle potential database errors
+            print(f"Database error: {e}")
+            return "An error occurred while saving your message.", 500
+        finally:
+            # Always close the connection
+            if conn:
+                conn.close()
+
+        # After a successful submission, redirect back to the home page ('/')
+        return redirect(url_for('home'))
+
+    # If it's a GET request, just render the home.html template
+    return render_template('home.html')
+
+if __name__ == '__main__':
+    # Running the app in debug mode
+    app.run(debug=True)
+
