@@ -16,6 +16,9 @@ const translations = {
     "cta.request": "Aloqa ma'lumotlarini so'rash",
     "cta.how": "Qanday ishlaydi",
     "hero.local": "Mahalliy to'lovlar qabul qilinadi: Click, PayMe, Uzum. O'zbekiston bo'ylab yetkazib berish.",
+    "about.txt":"Biz Haqimizda",
+    "about.p1":"TezLink — bu mutaxassislarning aloqa va tarmoq yaratish usullarini modernizatsiya qilishga bag'ishlangan ilg'or xizmat. O'zbekistonda tashkil etilgan kompaniyamizning maqsadi an'anaviy tashrif qog'ozlariga ekologik toza va samarali muqobil yechim taqdim etishdir. Bizning NFC-qo'llab-quvvatlaydigan kartalarimiz foydalanuvchilarga o'zlarining raqamli profillarini smartfonga bir teginish orqali tezkor almashish imkonini beradi.",
+    "about.p2":"Biz mijozlarimiz uchun muammosiz va qulay tajribani ta'minlash maqsadida mahalliy to'lov va yetkazib berish imkoniyatlarini taklif qilishdan faxrlanamiz. Innovatsion texnologiyalarni zamonaviy, sozlanishi mumkin bo'lgan dizaynlar bilan birlashtirgan holda, TezLink mutaxassislarga raqamli davrda unutilmas taassurot qoldirishga va mustahkam aloqalarni qurishga yordam bermoqda.",
     "products.title": "Kartalar va narxlar",
     "products.plastic_title": "Plastik karta",
     "products.plastic_desc": "Bardoshli, arzon, kundalik foydalanish uchun mukammal. Brend logotipi kiritilgan.",
@@ -52,7 +55,30 @@ const translations = {
     "contact.submit": "Xabar yuborish",
     "footer.copyright": "© 2024 TezLink. Barcha huquqlar himoyalangan.",
     "footer.telegram": "Telegram",
-    "footer.instagram": "Instagram"
+    "footer.instagram": "Instagram",
+    "services.title": "Bizning Xizmatlarimiz",
+    "services.design_title": "Individual Karta Dizayni",
+    "services.design_desc": "Biz brendingizga mos keladigan noyob kartani yaratish uchun shaxsiy dizayn xizmatlarini taklif qilamiz. Biz uni mukammal qilish uchun sizning yo'riqnomalaringiz, materiallaringiz va logotipingiz bilan ishlaymiz.",
+    "services.support_title": "Profilni Boshqarish va Qo'llab-quvvatlash",
+    "services.support_desc": "Raqamli profilingizni sozlashdan tortib texnik yordamgacha doimiy yordam ko'rsatamiz. Biz siz uchun maxsus oddiy veb-sayt ham yaratishimiz mumkin.",
+    "services.design_price": "150 000 so'mdan boshlab",
+    "services.support_price": "200 000 so'mdan boshlab",
+    "services.cta": "Xizmatga buyurtma berish",
+    "portfolio.title": "Bizning Ishlarimiz",
+    "portfolio.desc": "Bizning maxsus dizaynlashtirilgan kartalarimiz galereyasini ko'rib chiqing. Plastik, metall va yog'och kartalarimizdan namunalar ko'ring va o'zingiz uchun ilhom oling.",
+    "faq.title": "Ko'p Beriladigan Savollar",
+    "faq.q1": "TezLink kartasi qanday ishlaydi?",
+    "faq.a1": "Karta ichidagi NFC chipi bir tegish orqali raqamli profilingizni smartfonga yuboradi. Boshqa odamga sizning ma'lumotlaringizni olish uchun ilova kerak emas.",
+    "faq.q2": "Qaysi qurilmalar mos keladi?",
+    "faq.a2": "NFC imkoniyatiga ega barcha zamonaviy smartfonlar, jumladan, ko'pchilik iOS va Android qurilmalari mos keladi.",
+    "faq.q3": "Mening shaxsiy ma'lumotlarim xavfsizmi?",
+    "faq.a3": "Ha, sizning ma'lumotlaringiz xavfsiz saqlanadi. Siz o'z profilingizda qanday ma'lumotlar ulashilishini to'liq nazorat qilasiz va uni istalgan vaqtda yangilashingiz mumkin.",
+    "faq.q4": "Maxsus kartani qanday buyurtma qilsam bo'ladi?",
+    "faq.a4": "To'g'ridan-to'g'ri bizning aloqa formamiz orqali buyurtma berishingiz mumkin. To'lovdan so'ng, dizayningizni va profil tafsilotlarini yakunlash uchun siz bilan bog'lanamiz.",
+    "faq.q5": "Kartam bilan qanday ma'lumotlarni ulashishim mumkin?",
+    "faq.a5": "Siz o'zingizning aloqa ma'lumotlaringizni, ijtimoiy tarmoq havolalarini, portfolioni, veb-saytni va o'zingiz tanlagan boshqa havolalarni ulashishingiz mumkin. Sizning raqamli profilingiz to'liq moslashtirilgan.",
+    "faq.q6": "Kartamni yo'qotib qo'ysam nima bo'ladi?",
+    "faq.a6": "Yo'qolgan kartaning ulanishini onlayn boshqaruv panelingizdan osongina o'chirib qo'yishingiz mumkin, shunda ma'lumotlaringiz xavfsiz qoladi. Keyin yangisini buyurtma qilishingiz mumkin."
   },
   ru: {
     "nav.home": "Главная",
@@ -70,6 +96,9 @@ const translations = {
     "cta.request": "Запросить контакты",
     "cta.how": "Как это работает",
     "hero.local": "Принимаем местные платежи: Click, PayMe, Uzum. Доставка по всему Узбекистану.",
+    "about.txt":"О нас",
+    "about.p1":"TezLink — это передовой сервис, посвященный модернизации способов, которыми профессионалы общаются и устанавливают деловые связи. Основанная в Узбекистане, наша миссия — предоставить экологичную и эффективную альтернативу традиционным визитным карточкам. Наши карты с поддержкой NFC позволяют пользователям мгновенно делиться своими цифровыми профилями, просто прикоснувшись к смартфону.",
+    "about.p2": "Мы гордимся тем, что предлагаем местные варианты оплаты и доставки, обеспечивая бесперебойный и доступный сервис для наших клиентов. Сочетая инновационные технологии со стильными, настраиваемыми дизайнами, TezLink помогает профессионалам создавать неизгладимое впечатление и строить более прочные связи в цифровую эпоху.",
     "products.title": "Карты и цены",
     "products.plastic_title": "Пластиковая карта",
     "products.plastic_desc": "Прочная, доступная, идеальная для ежедневного использования. Ваш логотип бренда включен.",
@@ -106,7 +135,30 @@ const translations = {
     "contact.submit": "Отправить сообщение",
     "footer.copyright": "© 2024 TezLink. Все права защищены.",
     "footer.telegram": "Telegram",
-    "footer.instagram": "Instagram"
+    "footer.instagram": "Instagram",
+    "services.title": "Наши Услуги",
+    "services.design_title": "Индивидуальный Дизайн Карты",
+    "services.design_desc": "Мы предлагаем персонализированные дизайнерские услуги для создания уникальной карты, соответствующей вашему бренду. Мы будем работать с вашими рекомендациями, материалами и логотипом, чтобы сделать ее идеальной.",
+    "services.support_title": "Управление Профилем и Поддержка",
+    "services.support_desc": "Мы оказываем постоянную поддержку, от настройки вашего цифрового профиля до технической помощи. Мы даже можем создать для вас простой сайт.",
+    "services.design_price": "От 150 000 сум",
+    "services.support_price": "От 200 000 сум",
+    "services.cta": "Заказать услугу",
+    "portfolio.title": "Наши Работы",
+    "portfolio.desc": "Ознакомьтесь с нашей галереей карт индивидуального дизайна. Посмотрите примеры наших пластиковых, металлических и деревянных карт и вдохновитесь на создание своей собственной.",
+    "faq.title": "Часто Задаваемые Вопросы",
+    "faq.q1": "Как работает карта TezLink?",
+    "faq.a1": "NFC-чип внутри карты отправляет ваш цифровой профиль на смартфон одним касанием. Другому человеку не нужно приложение, чтобы получить вашу информацию.",
+    "faq.q2": "Какие устройства совместимы?",
+    "faq.a2": "Совместимы все современные смартфоны с поддержкой NFC, включая большинство устройств на iOS и Android.",
+    "faq.q3": "Мои личные данные в безопасности?",
+    "faq.a3": "Да, ваши данные надежно хранятся. Вы полностью контролируете, какая информация публикуется в вашем профиле, и можете обновить ее в любое время.",
+    "faq.q4": "Как заказать индивидуальную карту?",
+    "faq.a4": "Вы можете сделать заказ непосредственно через нашу контактную форму. После оплаты мы свяжемся с вами, чтобы согласовать дизайн и детали вашего профиля.",
+    "faq.q5": "Какой информацией я могу поделиться с помощью карты?",
+    "faq.a5": "Вы можете делиться своей контактной информацией, ссылками на социальные сети, портфолио, веб-сайтом и любыми другими ссылками по вашему выбору. Ваш цифровой профиль полностью настраиваемый.",
+    "faq.q6": "Что произойдет, если я потеряю карту?",
+    "faq.a6": "Вы можете легко отключить связь с утерянной картой из вашей онлайн-панели, чтобы ваша информация оставалась в безопасности. Затем вы можете заказать новую."
   },
   en: {
     "nav.home": "Home",
@@ -124,6 +176,9 @@ const translations = {
     "cta.request": "Request Contact",
     "cta.how": "How it works",
     "hero.local": "Accepts local payments: Click, PayMe, Uzum. Local delivery in Uzbekistan.",
+    "about.txt":"About us",
+    "about.p1":"TezLink is a cutting-edge service dedicated to modernizing the way professionals connect and network. Founded in Uzbekistan, our mission is to provide an eco-friendly and efficient alternative to traditional business cards. Our NFC-enabled cards allow users to instantly share their digital profiles with a simple tap on a smartphone.",
+    "about.p2":"We are proud to offer local payment and delivery options, ensuring a seamless and accessible experience for our customers. By combining innovative technology with stylish, customizable designs, TezLink is helping professionals make lasting impressions and build stronger connections in the digital age.",
     "products.title": "Cards & Pricing",
     "products.plastic_title": "Plastic Card",
     "products.plastic_desc": "Durable, affordable, perfect for daily use. Your brand logo included.",
@@ -160,7 +215,28 @@ const translations = {
     "contact.submit": "Send Message",
     "footer.copyright": "© 2024 TezLink. All rights reserved.",
     "footer.telegram": "Telegram",
-    "footer.instagram": "Instagram"
+    "footer.instagram": "Instagram",
+ "services.title": "Our Services",
+    "services.design_title": "Custom Card Design",
+    "services.design_desc": "We offer personalized design services to create a unique card that matches your brand. We'll work with your guidelines, materials, and logo to make it perfect.",
+    "services.support_title": "Profile Management & Support",
+    "services.support_desc": "We provide ongoing support, from setting up your digital profile to technical assistance. We can even create a custom simple website for you.",
+    "services.design_price": "From 150,000 UZS",
+    "services.support_price": "From 200,000 UZS",
+    "services.cta": "Order Service",
+    "portfolio.title": "Our Work",
+    "portfolio.desc": "Explore our gallery of custom-designed cards. See examples of our plastic, metal, and wood cards and get inspired for your own.",
+    "faq.title": "Frequently Asked Questions",
+    "faq.q1": "How does a TezLink card work?",
+    "faq.a1": "The NFC chip inside the card sends your digital profile to a smartphone with a single tap. The other person doesn't need an app to receive your information.",
+    "faq.q2": "What devices are compatible?",
+    "faq.a2": "All modern smartphones with NFC capabilities are compatible, including most iOS and Android devices.",
+    "faq.q3": "Is my personal data secure?",
+    "faq.a3": "Yes, your data is stored securely. You have full control over what information is shared on your profile, and you can update it at any time.",
+    "faq.q4": "How do I order a custom card?",
+    "faq.a4": "You can place an order directly through our contact form. After payment, we'll contact you to finalize your design and profile details.",
+    "faq.q5": "What information can I share with my card?",
+    "faq.a6": "You can easily disable a lost card's connection from your online dashboard, so your information remains secure. You can then order a new one."
   }
 };
 
@@ -205,16 +281,67 @@ document.querySelectorAll('.lang-btn').forEach(button => {
 
 // Initial content update
 updateContent(currentLang);
+// --- FAQ Accordion Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+  const faqQuestions = document.querySelectorAll('.faq-question');
 
-// Smooth scroll to sections
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-}
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      const answer = question.nextElementSibling;
+      const isActive = question.classList.contains('active');
 
-// Navbar functionality for mobile hamburger menu
+      // Optional: Close all other open items
+      // document.querySelectorAll('.faq-item').forEach(otherItem => {
+      //   if (otherItem !== item) {
+      //     otherItem.querySelector('.faq-question').classList.remove('active');
+      //     otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      //     otherItem.querySelector('.faq-answer').style.maxHeight = null;
+      //   }
+      // });
+
+      question.classList.toggle('active');
+
+      if (question.classList.contains('active')) {
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        const p = answer.querySelector('p');
+        p.style.padding = '0 16px 16px 16px'; // Ensure padding is applied when open
+      } else {
+        question.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+      }
+    });
+  });
+});
+// --- Smooth Scroll Logic ---
+    // Function to handle smooth scrolling to a section, centering it in the view
+    function scrollToSection(sectionId) {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    }
+
+    // Attach click listeners to all internal links and scroll buttons
+    document.querySelectorAll('a[href^="#"], button[data-scroll]').forEach(element => {
+        element.addEventListener('click', (event) => {
+            // Prevent default anchor link behavior
+            event.preventDefault();
+            const href = element.getAttribute('href');
+            const scrollId = element.dataset.scroll;
+
+            if (href && href.startsWith('#')) {
+                scrollToSection(href.substring(1));
+            } else if (scrollId) {
+                scrollToSection(scrollId);
+            }
+        });
+    });// Navbar functionality for mobile hamburger menu
+
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.getElementById('main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
@@ -306,9 +433,9 @@ makeDragScrollable('.product-list');
 makeDragScrollable('.test-cards');
 
 // Contact Form - no mailto
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+//document.getElementById('contact-form').addEventListener('submit', function(event) {
     // This prevents the default form submission which would reload the page
-    event.preventDefault(); 
+  //  event.preventDefault(); 
     
     // You can add your own form submission logic here, such as sending data to a server
     // For example:
@@ -324,23 +451,23 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // });
 
     // For now, we'll just log the form data to the console
-    const formData = new FormData(this);
-    const data = {};
-    for (let [key, value] of formData.entries()) {
-      data[key] = value;
-    }
-    console.log('Form data:', data);
+    //const formData = new FormData(this);
+   // const data = {};
+    //for (let [key, value] of formData.entries()) {
+      //data[key] = value;
+   // }
+    //console.log('Form data:', data);
 
     // Optional: Reset the form after "submission"
-    this.reset();
+   // this.reset();
     
     // Optional: Show a message to the user that the form was "sent"
-    const submitBtn = this.querySelector('button[type="submit"]');
-    submitBtn.textContent = 'Sent!';
-    setTimeout(() => {
-        submitBtn.textContent = translations[currentLang]['contact.submit'];
-    }, 2000);
-});
+   // const submitBtn = this.querySelector('button[type="submit"]');
+   // submitBtn.textContent = 'Sent!';
+   // setTimeout(() => {
+     //   submitBtn.textContent = translations[currentLang]['contact.submit'];
+   // }, 2000);
+//});
 
 // Keyboard focus to cta when coming back to top
 document.addEventListener('visibilitychange', () => {

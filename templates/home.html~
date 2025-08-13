@@ -1,325 +1,297 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TezLink — One Tap. Infinite Connections.</title>
+{% extends "base.html" %}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+{% block title %}TezLink - One Tap. Infinite Connections.{% endblock %}
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
-  
-  <!-- Meta -->
-  <meta name="description" content="TezLink — NFC business cards. One tap connects contacts, portfolio and socials. Local support in Uzbekistan." />
-</head>
-<body>
-
-  <!-- SITE HEADER -->
-  <header class="site-header" role="banner" aria-label="TezLink header">
-    <div class="container bar">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">T</div>
-        <div>
-          <h1 id="brand-name">TezLink</h1>
-          <div class="tagline small-muted" id="brand-tag">One Tap. Infinite Connections.</div>
-        </div>
-      </div>
-
-      <!-- Hamburger menu button for mobile -->
-      <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="bar-icon"></span>
-        <span class="bar-icon"></span>
-        <span class="bar-icon"></span>
-      </button>
-
-      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main">
-        <ul>
-          <li><a href="#home" data-i18n="nav.home">Home</a></li>
-          <li><a href="#about" data-i18n="nav.about">About</a></li>
-          <li><a href="#products" data-i18n="nav.products">Products</a></li>
-          <li><a href="#services" data-i18n="nav.services">Services</a></li>
-          <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-          <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="controls" aria-hidden="false">
-        <div class="lang-switch" role="tablist" aria-label="Language switcher">
-          <button class="lang-btn active" data-lang="uz">UZ</button>
-          <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-        </div>
-        <button class="cta-primary" id="get-tezlink" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="cta.get">Get TezLink</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main id="home" class="container" role="main">
+{% block content %}
     <section class="hero" aria-label="Hero section">
-      <div class="left">
-        <span class="eyebrow" data-i18n="hero.eyebrow">New in Uzbekistan</span>
-        <h2 id="hero-title" data-i18n="hero.title">One Tap. Infinite Connections.</h2>
-        <p class="lead" id="hero-sub" data-i18n="hero.subtitle">
-          TezLink empowers professionals in Uzbekistan to share their contact details, portfolios and socials instantly — with a single tap.
-        </p>
+        <div class="left">
+            <span class="eyebrow" data-i18n="hero.eyebrow">New in Uzbekistan</span>
+            <h2 id="hero-title" data-i18n="hero.title">One Tap. Infinite Connections.</h2>
+            <p class="lead" id="hero-sub" data-i18n="hero.subtitle">
+                TezLink empowers professionals in Uzbekistan to share their contact details, portfolios and socials instantly — with a single tap.
+            </p>
 
-        <div class="actions" role="region" aria-label="Primary actions">
-          <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="cta.request">Request Contact</button>
-          <button class="btn-ghost" onclick="scrollToSection('how')" data-i18n="cta.how">How it works</button>
-        </div>
-
-        <div style="margin-top:14px;color:var(--muted);font-size:13px" class="small-muted" id="local-payment" data-i18n="hero.local">
-          Accepts local payments: Click, PayMe, Uzum. Local delivery in Uzbekistan.
-        </div>
-      </div>
-
-      <div class="hero-demo" aria-hidden="false">
-        <div class="nfc-scene" aria-hidden="false">
-          <!-- Card visual -->
-          <div class="card-visual" role="img" aria-label="TezLink card preview">
-            <div style="display:flex;align-items:center;width:100%">
-              <div style="display:flex;flex-direction:column">
-                <div class="name" id="demo-name">A. Karimov</div>
-                <div class="role" id="demo-role">Product Designer • Tashkent</div>
-              </div>
-              <div class="chip" aria-hidden="true">NFC</div>
+            <div class="actions" role="region" aria-label="Primary actions">
+                <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="cta.request">Request Contact</button>
+                <button class="btn-ghost" onclick="scrollToSection('how')" data-i18n="cta.how">How it works</button>
             </div>
-          </div>
 
-          <!-- Animated icons that "burst" when tapping -->
-          <div class="icon-burst" id="iconBurst" aria-hidden="true">
-            <div class="burst-icon burst-contact" id="burstContact">
-              <!-- Phone icon -->
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5v3a2 2 0 0 1-2 2c-9.5 0-17-7.5-17-17A2 2 0 0 1 7 2h3a1 1 0 0 1 1 1c0 .9-.1 2.3-.3 3.3a1 1 0 0 1-.9.7L8.6 7.9a11.5 11.5 0 0 0 4.5 4.5l1.1-1.1c.2-.2.6-.2.8-.1 1 .2 2.4.3 3.3.3a1 1 0 0 1 1 1z" fill="#007BFF"/></svg> Contact
+            <div style="margin-top:14px;color:var(--muted);font-size:13px" class="small-muted" id="local-payment" data-i18n="hero.local">
+                Accepts local payments: Click, PayMe, Uzum. Local delivery in Uzbekistan.
             </div>
-            <div class="burst-icon burst-link" id="burstLink">
-              <svg viewBox="0 0 24 24"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l2.83-2.83a4 4 0 0 1 5.66 5.66l-1.41 1.41" stroke="#6f42ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Link
-            </div>
-            <div class="burst-icon burst-portfolio" id="burstPortfolio">
-              <svg viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7" stroke="#00b894" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Portfolio
-            </div>
-            <div class="burst-icon burst-social" id="burstSocial">
-              <svg viewBox="0 0 24 24"><path d="M21 12.5c0 4.7-3.8 8.5-8.5 8.5S4 17.2 4 12.5 7.8 4 12.5 4 21 7.8 21 12.5z" stroke="#ff7ab6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Socials
-            </div>
-          </div>
-          <!-- Phone illustration -->
-          <div class="phone-visual" role="img" aria-label="Phone receiving NFC">
-            <div style="text-align:center">
-              <div style="font-size:12px;opacity:0.9">Phone</div>
-              <div style="font-size:13px;margin-top:6px">Tap</div>
-            </div>
-          </div>
-          <!-- Invisible tap area for simulation -->
-          <button class="sr-only" id="simulateTap">Simulate tap</button>
         </div>
-      </div>
-    </section>
 
-    <!-- BENEFITS -->
-    <section id="about" class="benefits" aria-label="Key benefits">
-      <h3 class="sr-only">Key Benefits</h3>
-      <div class="benefit-card">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/><path d="M14 10l-6 6h12z"/><path d="M12 2l-6 6h4l-2 10l6-6h-4z"/></svg>
-        </div>
-        <div>
-          <h4 data-i18n="benefits.instant">Instant Sharing</h4>
-          <p data-i18n="benefits.instant_desc">Share full profile with a single tap — contact, socials and portfolio in one link.</p>
-        </div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-recycle"><path d="M7 7l-2 2h4.5a3.5 3.5 0 0 1 0 7H8"/><path d="M17 17l2-2h-4.5a3.5 3.5 0 0 1 0-7H16"/><path d="M10 11l2-2h-4.5a3.5 3.5 0 0 1 0 7H16"/></svg>
-        </div>
-        <div>
-          <h4 data-i18n="benefits.eco">Eco-Friendly</h4>
-          <p data-i18n="benefits.eco_desc">Reduce paper waste — one reusable TezLink card replaces hundreds of printed cards.</p>
-        </div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M12 11c-2.76 0-5 2.24-5 5s5 5 5 5 5-2.24 5-5-2.24-5-5-5z"/><circle cx="12" cy="11" r="1"/><path d="M12 2c4.95 0 9 4.05 9 9s-9 12-9 12-9-7.05-9-12 4.05-9 9-9z"/></svg>
-        </div>
-        <div>
-          <h4 data-i18n="benefits.local">Local & Reliable</h4>
-          <p data-i18n="benefits.local_desc">Local payments, production and support — fast delivery across Uzbekistan.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <!-- <section id="products" class="products" aria-label="Products preview">
-      <h3 style="margin:0 0 12px 0" data-i18n="products.title">Cards & Pricing</h3>
-      <div class="product-list" role="list" aria-label="Product examples">
-        <article class="product-item" role="listitem" aria-label="Plastic card">
-          <div class="product-swatch">Plastic — Standard</div>
-          <h5 data-i18n="products.plastic_title">Plastic Card</h5>
-          <p class="muted" style="font-size:14px;margin:0" data-i18n="products.plastic_desc">Durable, affordable, perfect for daily use. Your brand logo included.</p>
-        </article>
-        <article class="product-item" role="listitem" aria-label="Metal card">
-          <div class="product-swatch">Metal — Premium</div>
-          <h5 data-i18n="products.metal_title">Metal Card</h5>
-          <p class="muted" style="font-size:14px;margin:0" data-i18n="products.metal_desc">Laser-engraved steel with a matte finish. Sleek, premium feel.</p>
-        </article>
-        <article class="product-item" role="listitem" aria-label="Eco wood card">
-          <div class="product-swatch">Eco Wood — Elegant</div>
-          <h5 data-i18n="products.eco_title">Eco Wood Card</h5>
-          <p class="muted" style="font-size:14px;margin:0" data-i18n="products.eco_desc">Made from sustainable materials with a smooth, natural finish.</p>
-        </article>
-      </div>
-    </section> -->
-    <section id="products" class="products" aria-label="Products preview">
-      <h3 style="margin:0 0 12px 0" data-i18n="products.title">Cards & Pricing</h3>
-      <div class="product-list" role="list" aria-label="Product examples">
-        <article class="product-item" role="listitem" aria-label="Plastic card">
-          <div class="product-swatch">Plastic — Standard</div>
-          <h5>Plastic TezLink</h5>
-          <p class="muted">Affordable, lightweight NFC card for everyday use.<br><strong>From 180,000 UZS</strong></p>
-          <div style="margin-top:8px">
-            <button class="btn-ghost" onclick="scrollToSection('contact')" data-i18n="products.request">Request Quote</button>
-          </div>
-        </article>
-
-        <article class="product-item" role="listitem" aria-label="Metal card">
-          <div class="product-swatch">Metal — Premium</div>
-          <h5>Metal TezLink</h5>
-          <p class="muted">Premium finish for an executive feel.<br><strong>From 480,000 UZS</strong></p>
-          <div style="margin-top:8px">
-            <button class="btn-ghost" onclick="scrollToSection('contact')" data-i18n="products.request">Request Quote</button>
-          </div>
-        </article>
-
-        <article class="product-item" role="listitem" aria-label="Wood card">
-          <div class="product-swatch">Wood — Natural</div>
-          <h5>Wood TezLink</h5>
-          <p class="muted">Eco-wood finish that stands out.<br><strong>From 300,000 UZS</strong></p>
-          <div style="margin-top:8px">
-            <button class="btn-ghost" onclick="scrollToSection('contact')" data-i18n="products.request">Request Quote</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how" class="steps" aria-label="How it works">
-      <h3 style="margin:0 0 12px 0" data-i18n="how.title">How TezLink Works</h3>
-      <div class="step" role="region" aria-label="Step 1">
-        <div class="num">1</div>
-        <div>
-          <h4 data-i18n="how.step1">Create your profile</h4>
-          <p class="muted" data-i18n="how.step1_desc">A personal page where you can manage and share your links, socials, and contact details.</p>
-        </div>
-      </div>
-      <div class="step" role="region" aria-label="Step 2">
-        <div class="num">2</div>
-        <div>
-          <h4 data-i18n="how.step2">Receive your card</h4>
-          <p class="muted" data-i18n="how.step2_desc">We produce and deliver your custom-designed card to your doorstep anywhere in Uzbekistan.</p>
-        </div>
-      </div>
-      <div class="step" role="region" aria-label="Step 3">
-        <div class="num">3</div>
-        <div>
-          <h4 data-i18n="how.step3">Tap and connect</h4>
-          <p class="muted" data-i18n="how.step3_desc">Simply tap your TezLink card on a smartphone to instantly share your digital profile.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="testimonials" aria-label="Client testimonials">
-      <h3 style="margin:0 0 12px 0" data-i18n="testimonials.title">What our customers say</h3>
-      <div class="test-cards" role="list">
-        <article class="test-card" role="listitem">
-          <p data-i18n="testimonials.test1">"TezLink made my networking so much easier. The card looks great and the profile is a breeze to set up. Highly recommend!"</p>
-          <div style="font-weight:600;margin-top:10px" data-i18n="testimonials.test1_author">— M. Azimov, CEO</div>
-        </article>
-        <article class="test-card" role="listitem">
-          <p data-i18n="testimonials.test2">"The quality of the metal card is fantastic. It’s a great conversation starter and an effective tool for business."</p>
-          <div style="font-weight:600;margin-top:10px" data-i18n="testimonials.test2_author">— S. Valiullaev, Marketing</div>
-        </article>
-        <article class="test-card" role="listitem">
-          <p data-i18n="testimonials.test3">"Fast delivery and amazing customer support. The local payment options made the whole process seamless."</p>
-          <div style="font-weight:600;margin-top:10px" data-i18n="testimonials.test3_author">— Z. Karimova, Freelancer</div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CTA STRIP -->
-    <section class="cta-strip" aria-label="Call to action">
-      <div>
-        <h3 data-i18n="cta.strip_title">Ready to connect?</h3>
-        <p class="muted" data-i18n="cta.strip_desc">Get your custom TezLink card today.</p>
-      </div>
-      <div class="cta-wrap">
-        <button class="btn-ghost" onclick="scrollToSection('products')" data-i18n="cta.strip_products">View products</button>
-        <button class="cta-primary" onclick="scrollToSection('contact')" data-i18n="cta.strip_contact">Get yours</button>
-      </div>
-    </section>
-
-    <!-- CONTACT FORM -->
-    <section id="contact" class="contact-form" aria-label="Contact form">
-      <h3 style="margin:0 0 12px 0" data-i18n="contact.title">Get in touch</h3>
-      <p class="muted" style="max-width:600px;margin-bottom:18px" data-i18n="contact.desc">
-        Have questions or want to place an order? Fill out the form below and we'll get back to you shortly.
-      </p>
-      <form id="contact-form" class="form-grid" method='post'>
-        <input type="text" name="name" placeholder="Name" required data-i18n-placeholder="contact.name">
-        <input type="email" name="email" placeholder="Email" required data-i18n-placeholder="contact.email">
-        <select name="interest" required data-i18n-label="contact.interest">
-          <option value="" disabled selected data-i18n="contact.interest_placeholder">I am interested in...</option>
-          <option value="plastic" data-i18n="products.plastic_title">Plastic Card</option>
-          <option value="metal" data-i18n="products.metal_title">Metal Card</option>
-          <option value="eco" data-i18n="products.eco_title">Eco Wood Card</option>
-          <option value="general" data-i18n="contact.general_inquiry">General Inquiry</option>
-        </select>
-        <textarea name="message" placeholder="Your Message" required data-i18n-placeholder="contact.message"></textarea>
-        <button type="submit" class="cta-primary" data-i18n="contact.submit">Send Message</button>
-      </form>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer class="site-footer container" role="contentinfo">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div style="display:flex;align-items:center;gap:10px">
-                    <div class="logo" style="width:48px;height:48px;border-radius:10px">T</div>
-                    <div>
-                        <strong>TezLink</strong>
-                        <div class="muted" style="font-size:13px">Bir tegishda cheksiz imkoniyatlar.</div>
+        <div class="hero-demo" aria-hidden="false">
+            <div class="nfc-scene" aria-hidden="false">
+                <div class="card-visual" role="img" aria-label="TezLink card preview">
+                    <div style="display:flex;align-items:center;width:100%">
+                        <div style="display:flex;flex-direction:column">
+                            <div class="name" id="demo-name">A. Karimov</div>
+                            <div class="role" id="demo-role">Product Designer • Tashkent</div>
+                        </div>
+                        <div class="chip" aria-hidden="true">NFC</div>
                     </div>
                 </div>
-                <p class="muted" style="margin-top:10px">© <span id="year"></span> TezLink — All rights reserved.</p>
-            </div>
-            
-            <div>
-                <h4 style="margin:0 0 8px 0">Quick links</h4>
-                <div style="display:flex;flex-direction:column;gap:6px" class="muted">
-                    <a href="#products" data-i18n="nav.products">Products & Pricing</a>
-                    <a href="#services" data-i18n="nav.services">Services</a>
-                    <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-                    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+
+                <div class="icon-burst" id="iconBurst" aria-hidden="true">
+                    <div class="burst-icon burst-contact" id="burstContact">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 16.5v3a2 2 0 0 1-2 2c-9.5 0-17-7.5-17-17A2 2 0 0 1 7 2h3a1 1 0 0 1 1 1c0 .9-.1 2.3-.3 3.3a1 1 0 0 1-.9.7L8.6 7.9a11.5 11.5 0 0 0 4.5 4.5l1.1-1.1c.2-.2.6-.2.8-.1 1 .2 2.4.3 3.3.3a1 1 0 0 1 1 1z" fill="#007BFF"/></svg> Contact
+                    </div>
+                    <div class="burst-icon burst-link" id="burstLink">
+                        <svg viewBox="0 0 24 24"><path d="M10.59 13.41a1 1 0 0 1 0-1.41l2.83-2.83a4 4 0 0 1 5.66 5.66l-1.41 1.41" stroke="#6f42ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Link
+                    </div>
+                    <div class="burst-icon burst-portfolio" id="burstPortfolio">
+                        <svg viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7" stroke="#00b894" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Portfolio
+                    </div>
+                    <div class="burst-icon burst-social" id="burstSocial">
+                        <svg viewBox="0 0 24 24"><path d="M21 12.5c0 4.7-3.8 8.5-8.5 8.5S4 17.2 4 12.5 7.8 4 12.5 4 21 7.8 21 12.5z" stroke="#ff7ab6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg> Socials
+                    </div>
                 </div>
-            </div>
-            
-            <div>
-                <h4 style="margin:0 0 8px 0">Contact</h4>
-                <div class="muted" style="display:flex;flex-direction:column;gap:6px">
-                    <div>Telegram: @TezLinkSupport</div>
-                    <div>Phone: +998 90 000 0000</div>
-                    <div>Email: hello@tezlink.uz</div>
+                <div class="phone-visual" role="img" aria-label="Phone receiving NFC">
+                    <div style="text-align:center">
+                        <div style="font-size:12px;opacity:0.9">Phone</div>
+                        <div style="font-size:13px;margin-top:6px">Tap</div>
+                    </div>
                 </div>
+                <button class="sr-only" id="simulateTap">Simulate tap</button>
             </div>
         </div>
-    </footer>
-</main>
+    </section>
+
+    <section id="about" class="cta-strip" aria-label="About TezLink">
+        <div class="container">
+            <h1 style="text-align: center; color: #2c3e50; margin-bottom: 20px;" data-i18n="about.txt">About TezLink</h1>
+            <p style="font-size: 1.1em; text-align: justify;" data-i18n="about.p1">TezLink is a cutting-edge service dedicated to modernizing the way professionals connect and network. Founded in Uzbekistan, our mission is to provide an eco-friendly and efficient alternative to traditional business cards. Our NFC-enabled cards allow users to instantly share their digital profiles with a simple tap on a smartphone.</p>
+            <p style="font-size: 1.1em; text-align: justify;" data-i18n="about.p2">We are proud to offer local payment and delivery options, ensuring a seamless and accessible experience for our customers. By combining innovative technology with stylish, customizable designs, TezLink is helping professionals make lasting impressions and build stronger connections in the digital age.</p>
+        </div>
+    </section>
     
-    <!-- JavaScript file -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>
+    <section id="about" class="benefits" aria-label="Key benefits">
+        <h3 class="sr-only">Key Benefits</h3>
+        <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M4 14v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"/><path d="M14 10l-6 6h12z"/><path d="M12 2l-6 6h4l-2 10l6-6h-4z"/></svg>
+            </div>
+            <div>
+                <h4 data-i18n="benefits.instant">Instant Sharing</h4>
+                <p class="muted" data-i18n="benefits.instant_desc">Share full profile with a single tap — contact, socials and portfolio in one link.</p>
+            </div>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-recycle"><path d="M7 7l-2 2h4.5a3.5 3.5 0 0 1 0 7H8"/><path d="M17 17l2-2h-4.5a3.5 3.5 0 0 1 0-7H16"/><path d="M10 11l2-2h-4.5a3.5 3.5 0 0 1 0 7H16"/></svg>
+            </div>
+            <div>
+                <h4 data-i18n="benefits.eco">Eco-Friendly</h4>
+                <p class="muted" data-i18n="benefits.eco_desc">Reduce paper waste — one reusable TezLink card replaces hundreds of printed cards.</p>
+            </div>
+        </div>
+        <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M12 11c-2.76 0-5 2.24-5 5s5 5 5 5 5-2.24 5-5-2.24-5-5-5z"/><circle cx="12" cy="11" r="1"/><path d="M12 2c4.95 0 9 4.05 9 9s-9 12-9 12-9-7.05-9-12 4.05-9 9-9z"/></svg>
+            </div>
+            <div>
+                <h4 data-i18n="benefits.local">Local & Reliable</h4>
+                <p class="muted" data-i18n="benefits.local_desc">Local payments, production and support — fast delivery across Uzbekistan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products" aria-label="Products preview">
+        <h3 style="margin:0 0 12px 0" data-i18n="products.title">Cards & Pricing</h3>
+        <div class="product-list" role="list" aria-label="Product examples">
+            <article class="product-item" role="listitem" aria-label="Plastic card">
+                <div class="product-swatch">Plastic — Standard</div>
+                <h5>Plastic TezLink</h5>
+                <p class="muted">Affordable, lightweight NFC card for everyday use.<br><strong>From 180,000 UZS</strong></p>
+                <div style="margin-top:8px">
+                    <button class="btn-ghost" onclick="scrollToSection('contact')" data-i18n="products.request">Request Quote</button>
+                </div>
+            </article>
+
+            <article class="product-item" role="listitem" aria-label="Metal card">
+                <div class="product-swatch">Metal — Premium</div>
+                <h5>Metal TezLink</h5>
+                <p class="muted">Premium finish for an executive feel.<br><strong>From 480,000 UZS</strong></p>
+                <div style="margin-top:8px">
+                    <button class="btn-ghost" onclick="scrollToSection('contact')" data-i18n="products.request">Request Quote</button>
+                </div>
+            </article>
+
+            <article class="product-item" role="listitem" aria-label="Wood card">
+                <div class="product-swatch">Wood — Natural</div>
+                <h5>Wood TezLink</h5>
+                <p class="muted">Eco-wood finish that stands out.<br><strong>From 300,000 UZS</strong></p>
+                <div style="margin-top:8px">
+                    <button class="btn-ghost" onclick="scrollToSection('contact')" data-i18n="products.request">Request Quote</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="services" class="products" aria-label="Our Services">
+    <h3 style="margin:0 0 12px 0" data-i18n="services.title">Our Services</h3>
+    <div class="product-list" role="list">
+        <article class="product-item" role="listitem">
+            <h4 data-i18n="services.design_title" style="margin-top:0;">Custom Card Design</h4>
+            <p class="muted" data-i18n="services.design_desc">We offer personalized design services to create a unique card that matches your brand. We'll work with your guidelines, materials, and logo to make it perfect.</p>
+            <div class="service-price" data-i18n="services.design_price">From 150,000 UZS</div>
+            <div style="margin-top:16px;">
+                <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="services.cta">Order Service</button>
+            </div>
+        </article>
+
+        <article class="product-item" role="listitem">
+            <h4 data-i18n="services.support_title" style="margin-top:0;">Profile Management & Support</h4>
+            <p class="muted" data-i18n="services.support_desc">We provide ongoing support, from setting up your digital profile to technical assistance. We can even create a custom simple website for you.</p>
+            <div class="service-price" data-i18n="services.support_price">From 200,000 UZS</div>
+            <div style="margin-top:16px;">
+                <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="services.cta">Order Service</button>
+            </div>
+        </article>
+    </div>
+</section>
+    <section id="portfolio" class="products" aria-label="Portfolio">
+        <h3 style="margin:0 0 12px 0" data-i18n="portfolio.title">Our Work</h3>
+        <p class="muted" style="max-width:600px;margin-bottom:18px" data-i18n="portfolio.desc">
+            Explore our gallery of custom-designed cards. See examples of our plastic, metal, and wood cards and get inspired for your own.
+        </p>
+        <div class="product-list" role="list" aria-label="Portfolio examples">
+            <article class="product-item" role="listitem" aria-label="Custom metal card">
+                <div class="product-swatch"></div>
+                <h5>Black Metal Card</h5>
+                <p class="muted">A sleek, laser-engraved design for a premium client.</p>
+            </article>
+
+            <article class="product-item" role="listitem" aria-label="Custom plastic card">
+                <div class="product-swatch"></div>
+                <h5>Branded Plastic Card</h5>
+                <p class="muted">A colorful design matching the company's brand identity.</p>
+            </article>
+
+            <article class="product-item" role="listitem" aria-label="Custom wood card">
+                <div class="product-swatch"></div>
+                <h5>Engraved Wood Card</h5>
+                <p class="muted">An eco-friendly choice with a unique, natural grain.</p>
+            </article>
+        </div>
+    </section>
+
+   <section id="how" class="steps" aria-label="How it works">
+        <h3 style="margin:0 0 12px 0" data-i18n="how.title">How TezLink Works</h3>
+        <div class="step" role="region" aria-label="Step 1">
+            <div class="num">1</div>
+            <div>
+                <h4 data-i18n="how.step1">Create your profile</h4>
+                <p class="muted" data-i18n="how.step1_desc">A personal page where you can manage and share your links, socials, and contact details.</p>
+            </div>
+        </div>
+        <div class="step" role="region" aria-label="Step 2">
+            <div class="num">2</div>
+            <div>
+                <h4 data-i18n="how.step2">Receive your card</h4>
+                <p class="muted" data-i18n="how.step2_desc">We produce and deliver your custom-designed card to your doorstep anywhere in Uzbekistan.</p>
+            </div>
+        </div>
+        <div class="step" role="region" aria-label="Step 3">
+            <div class="num">3</div>
+            <div>
+                <h4 data-i18n="how.step3">Tap and connect</h4>
+                <p class="muted" data-i18n="how.step3_desc">Simply tap your TezLink card on a smartphone to instantly share your digital profile.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials" aria-label="Client testimonials">
+        <h3 style="margin:0 0 12px 0" data-i18n="testimonials.title">What our customers say</h3>
+        <div class="test-cards" role="list">
+            <article class="test-card" role="listitem">
+                <p data-i18n="testimonials.test1">"TezLink made my networking so much easier. The card looks great and the profile is a breeze to set up. Highly recommend!"</p>
+                <div style="font-weight:600;margin-top:10px" data-i18n="testimonials.test1_author">— M. Azimov, CEO</div>
+            </article>
+            <article class="test-card" role="listitem">
+                <p data-i18n="testimonials.test2">"The quality of the metal card is fantastic. It’s a great conversation starter and an effective tool for business."</p>
+                <div style="font-weight:600;margin-top:10px" data-i18n="testimonials.test2_author">— S. Valiullaev, Marketing</div>
+            </article>
+            <article class="test-card" role="listitem">
+                <p data-i18n="testimonials.test3">"Fast delivery and amazing customer support. The local payment options made the whole process seamless."</p>
+                <div style="font-weight:600;margin-top:10px" data-i18n="testimonials.test3_author">— Z. Karimova, Freelancer</div>
+            </article>
+        </div>
+    </section>
+
+    <section class="cta-strip" aria-label="Call to action">
+        <div>
+            <h3 data-i18n="cta.strip_title">Ready to connect?</h3>
+            <p class="muted" data-i18n="cta.strip_desc">Get your custom TezLink card today.</p>
+        </div>
+        <div class="cta-wrap">
+            <button class="btn-ghost" onclick="scrollToSection('products')" data-i18n="cta.strip_products">View products</button>
+            <button class="cta-primary" onclick="scrollToSection('contact')" data-i18n="cta.strip_contact">Get yours</button>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-form" aria-label="Contact form">
+        <h3 style="margin:0 0 12px 0" data-i18n="contact.title">Get in touch</h3>
+        <p class="muted" style="max-width:600px;margin-bottom:18px" data-i18n="contact.desc">
+            Have questions or want to place an order? Fill out the form below and we'll get back to you shortly.
+        </p>
+        <form id="contact-form" class="form-grid" method='post' action="{{ url_for('home')}}">
+            <input type="text" name="name" placeholder="Name" required data-i18n-placeholder="contact.name">
+            <input type="email" name="email" placeholder="Email" required data-i18n-placeholder="contact.email">
+            <select name="interest" required data-i18n-label="contact.interest">
+                <option value="" disabled selected data-i18n="contact.interest_placeholder">I am interested in...</option>
+                <option value="plastic" data-i18n="products.plastic_title">Plastic Card</option>
+                <option value="metal" data-i18n="products.metal_title">Metal Card</option>
+                <option value="eco" data-i18n="products.eco_title">Eco Wood Card</option>
+                <option value="general" data-i18n="contact.general_inquiry">General Inquiry</option>
+            </select>
+            <textarea name="message" placeholder="Your Message" required data-i18n-placeholder="contact.message"></textarea>
+            <button type="submit" class="cta-primary" data-i18n="contact.submit">Send Message</button>
+        </form>
+        {% if success_message %}
+            <p class="success-message">Your message has been sent successfully!</p>
+        {% endif %}
+    </section>
+<section id="faq" class="faq" aria-label="Frequently Asked Questions">
+    <h3 style="margin:0 0 12px 0" data-i18n="faq.title">Frequently Asked Questions</h3>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" data-i18n="faq.q1">How does a TezLink card work?</button>
+            <div class="faq-answer">
+                <p class="muted" data-i18n="faq.a1">The NFC chip inside the card sends your digital profile to a smartphone with a single tap. The other person doesn't need an app to receive your information.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" data-i18n="faq.q2">What devices are compatible?</button>
+            <div class="faq-answer">
+                <p class="muted" data-i18n="faq.a2">All modern smartphones with NFC capabilities are compatible, including most iOS and Android devices.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" data-i18n="faq.q3">Is my personal data secure?</button>
+            <div class="faq-answer">
+                <p class="muted" data-i18n="faq.a3">Yes, your data is stored securely. You have full control over what information is shared on your profile, and you can update it at any time.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" data-i18n="faq.q4">How do I order a custom card?</button>
+            <div class="faq-answer">
+                <p class="muted" data-i18n="faq.a4">You can place an order directly through our contact form. After payment, we'll contact you to finalize your design and profile details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" data-i18n="faq.q5">What information can I share with my card?</button>
+            <div class="faq-answer">
+                <p class="muted" data-i18n="faq.a5">You can share your contact information, social media links, portfolio, website, and any other links you choose. Your digital profile is fully customizable.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" data-i18n="faq.q6">What happens if I lose my card?</button>
+            <div class="faq-answer">
+                <p class="muted" data-i18n="faq.a6">You can easily disable a lost card's connection from your online dashboard, so your information remains secure. You can then order a new one.</p>
+            </div>
+        </div>
+    </div>
+</section> 
+{% endblock %}

@@ -14,6 +14,11 @@
   --glass: rgba(255, 255, 255, 0.6);
 }
 
+/* Global setting for smooth scroll animation */
+html {
+  scroll-behavior: smooth;
+}
+
 * { box-sizing: border-box }
 html, body { height: 100% }
 body {
@@ -40,9 +45,10 @@ img { max-width: 100%; display: block }
 
 /* Header */
 header.site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 40;
+  z-index: 60;
+  width: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(20, 20, 20, 0.04);
@@ -76,7 +82,7 @@ header.site-header {
 .brand h1 { font-size: 18px; margin: 0; letter-spacing: -0.2px }
 .brand .tagline { font-size: 12px; color: var(--muted); margin-top: 2px }
 
-* Nav */
+/* Nav */
 nav.main-nav {
   display: none; /* hidden by default on mobile */
   align-items: center;
@@ -135,6 +141,11 @@ nav.main-nav a { font-weight: 500; color: var(--brand-charcoal); opacity: 0.95 }
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
+}
+
+/* Section Padding Utility */
+.section-pad {
+    padding: 36px 0;
 }
 
 /* Hero */
@@ -318,7 +329,7 @@ nav.main-nav a { font-weight: 500; color: var(--brand-charcoal); opacity: 0.95 }
 
 /* Contact Form */
 .contact-form { padding: 12px 0 }
-.form-grid { display: grid; gap: 12px; max-width: 500px; }
+.form-grid { display: grid; gap: 12px; max-width: 500px; margin: 0 auto; }
 .form-grid input, .form-grid select, .form-grid textarea {
   border: 1px solid rgba(16, 24, 40, 0.06);
   padding: 12px;
@@ -334,6 +345,74 @@ footer.site-footer { padding: 22px 0; border-top: 1px solid rgba(16, 24, 40, 0.0
 .footer-grid { display: grid; gap: 12px }
 .footer-brand p { margin: 6px 0 0 0; color: var(--muted) }
 .socials { display: flex; gap: 10px }
+
+/* ========= START: CSS FOR NEW SECTIONS ========= */
+
+/* Services Section */
+.service-price {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--brand-blue);
+}
+
+
+/* FAQ Section */
+.faq { padding: 18px 0; }
+.faq-container {
+    display: grid;
+    gap: 12px;
+    max-width: 800px; /* Constrain width for better readability */
+    margin: 0 auto;   /* Center the container */
+}
+.faq-item {
+    background: linear-gradient(180deg, #fff, #f8fbff);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(16, 24, 40, 0.04);
+}
+.faq-question {
+    /* Reset button styles */
+    background: transparent;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px; /* A good readable size */
+    font-weight: 600;
+    color: var(--brand-charcoal);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--brand-blue);
+    transition: transform 0.2s ease-in-out;
+}
+
+.faq-question.active::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 0 16px 16px 16px;
+}
+/* ========= END: CSS FOR NEW SECTIONS ========= */
+
 
 /* small screens - mobile-first, few breakpoints */
 @media(max-width: 740px) {
@@ -415,6 +494,14 @@ footer.site-footer { padding: 22px 0; border-top: 1px solid rgba(16, 24, 40, 0.0
   .brand h1 { font-size: 20px }
   .hero-demo { min-height: 320px }
   .footer-grid { grid-template-columns: 1fr 1fr }
+  .form-grid {
+    grid-template-columns: 1fr 1fr; /* Create two columns */
+    max-width: 800px;
+  }
+  
+  .form-grid .full-width {
+    grid-column: 1 / -1; /* Make element span both columns */
+  }
 }
 
 @media(min-width: 980px) {

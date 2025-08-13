@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}TezLink{% endblock %}</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  
+  <!-- Meta tags -->
+  <meta name="description" content="TezLink — NFC business cards. One tap connects contacts, portfolio and socials. Local support in Uzbekistan." />
+  
+  {% block head_content %}{% endblock %}
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner" aria-label="TezLink header">
+    <div class="container bar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">T</div>
+        <div>
+          <h1 id="brand-name">TezLink</h1>
+          <div class="tagline small-muted" id="brand-tag">One Tap. Infinite Connections.</div>
+        </div>
+      </div>
+
+      <!-- Hamburger menu button for mobile -->
+      <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="bar-icon"></span>
+        <span class="bar-icon"></span>
+        <span class="bar-icon"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" role="navigation" aria-label="Main">
+        <ul>
+          <li><a href="{{ url_for('home') }}" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#products" data-i18n="nav.products">Products</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls" aria-hidden="false">
+        <div class="lang-switch" role="tablist" aria-label="Language switcher">
+          <button class="lang-btn active" data-lang="uz">UZ</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="cta-primary" id="get-tezlink" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" data-i18n="cta.get">Get TezLink</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    {% block content %}{% endblock %}
+    
+  <!-- FOOTER -->
+  <footer class="site-footer container" role="contentinfo">
+      <div class="footer-grid">
+          <div class="footer-brand">
+              <div style="display:flex;align-items:center;gap:10px">
+                  <div class="logo" style="width:48px;height:48px;border-radius:10px">T</div>
+                  <div>
+                      <strong>TezLink</strong>
+                      <div class="muted" style="font-size:13px">Bir tegishda cheksiz imkoniyatlar.</div>
+                  </div>
+              </div>
+              <p class="muted" style="margin-top:10px">© <span id="year"></span> TezLink — All rights reserved.</p>
+          </div>
+          
+          <div>
+              <h4 style="margin:0 0 8px 0">Quick links</h4>
+              <div style="display:flex;flex-direction:column;gap:6px" class="muted">
+                  <a href="#products" data-i18n="nav.products">Products & Pricing</a>
+                  <a href="#services" data-i18n="nav.services">Services</a>
+                  <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+                  <a href="#faq" data-i18n="nav.faq">FAQ</a>
+              </div>
+          </div>
+          
+          <div>
+              <h4 style="margin:0 0 8px 0">Contact</h4>
+              <div class="muted" style="display:flex;flex-direction:column;gap:6px">
+                  <div>Telegram: @TezLinkSupport</div>
+                  <div>Phone: +998 90 000 0000</div>
+                  <div>Email: hello@tezlink.uz</div>
+              </div>
+          </div>
+      </div>
+  </footer>
+</main>
+  <!-- JavaScript file -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

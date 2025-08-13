@@ -1,65 +1,126 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f9;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
+{% extends "base.html" %}
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+{% block title %}Admin Panel{% endblock %}
 
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-        }
+{% block head_content %}
+<style>
+    /* Admin panel specific styles */
+    .container-admin {
+        padding: 20px;
+	margin-top: 100px;
+    }
+    
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        overflow: hidden; /* Ensures rounded corners are applied to the table */
+    }
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
+    table thead tr {
+        background-color: #007BFF;
+        color: #ffffff;
+        text-align: left;
+    }
 
-        th {
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
-        }
+    table th,
+    table td {
+        padding: 12px 15px;
+        border-right: 1px solid #dddddd;
+    }
+    
+    table th:last-child,
+    table td:last-child {
+        border-right: none;
+    }
+    
+    table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+    table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
 
-        p.no-messages {
-            text-align: center;
-            font-style: italic;
-            color: #7f8c8d;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
+    table tbody tr:last-of-type {
+        border-bottom: 2px solid #007BFF;
+    }
+
+    table tbody tr:hover {
+        background-color: #f1f7ff;
+    }
+
+    .no-messages {
+        text-align: center;
+        color: #6c757d;
+        font-style: italic;
+    }
+
+    /* Style for the CRUD actions */
+    .actions-cell {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .actions-cell form {
+        margin: 0;
+    }
+    
+    .actions-cell select, .actions-cell button {
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    .actions-cell .delete-button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .actions-cell .update-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Logout button style */
+    .logout-button {
+        padding: 10px 20px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        float: right;
+        margin-bottom: 20px;
+        text-decoration: none;
+    }
+    .logout-button:hover {
+        background-color: #d32f2f;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="container-admin">
+        <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
         <h1>Admin Panel - Contact Messages</h1>
         {% if messages %}
             <table>
@@ -68,8 +129,13 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Phone</th>
+                        <th>Company Name</th>
+                        <th>Telegram Username</th>
                         <th>Interest</th>
                         <th>Message</th>
+                        <th>Status</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,8 +145,26 @@
                         <td>{{ message['id'] }}</td>
                         <td>{{ message['name'] }}</td>
                         <td>{{ message['email'] }}</td>
+                        <td>{{ message['phone'] }}</td>
+                        <td>{{ message['company_name'] }}</td>
+                        <td>{{ message['telegram_username'] }}</td>
                         <td>{{ message['interest'] }}</td>
                         <td>{{ message['message'] }}</td>
+                        <td>{{ message['status'] }}</td>
+                        <td class="actions-cell">
+                            <!-- Update Status Form -->
+                            <form action="{{ url_for('update_status', message_id=message['id']) }}" method="post">
+                                <select name="new_status" onchange="this.form.submit()">
+                                    <option value="Active" {% if message['status'] == 'Active' %}selected{% endif %}>Active</option>
+                                    <option value="In Progress" {% if message['status'] == 'In Progress' %}selected{% endif %}>In Progress</option>
+                                    <option value="Completed" {% if message['status'] == 'Completed' %}selected{% endif %}>Completed</option>
+                                </select>
+                            </form>
+                            <!-- Delete Button -->
+                            <form action="{{ url_for('delete_message', message_id=message['id']) }}" method="post">
+                                <button type="submit" class="delete-button" onclick="return confirm('Are you sure you want to delete this message?');">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -89,5 +173,5 @@
             <p class="no-messages">No messages found in the database.</p>
         {% endif %}
     </div>
-</body>
-</html>
+{% endblock %}
+

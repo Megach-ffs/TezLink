@@ -1,0 +1,73 @@
+
+{% extends "base.html" %}
+
+{% block title %}Admin Login{% endblock %}
+
+{% block head_content %}
+<style>
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+    .login-box {
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+    .login-box h1 {
+        margin-bottom: 20px;
+        color: #007BFF;
+    }
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        box-sizing: border-box;
+    }
+    .login-box button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .login-box button:hover {
+        background-color: #0056b3;
+    }
+    .error-message {
+        color: #dc3545;
+        margin-bottom: 15px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Admin Login</h1>
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+            <form action="{{ url_for('login') }}" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
